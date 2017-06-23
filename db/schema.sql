@@ -1,5 +1,6 @@
 CREATE DATABASE Craigslist_db;
 USE Craigslist_db;
+
 CREATE TABLE bases(
 	id INT AUTO_INCREMENT,
     base_name VARCHAR(255),
