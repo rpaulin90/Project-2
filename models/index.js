@@ -31,9 +31,9 @@ Object.keys(db).forEach(function(modelName) {
 });
 
 // Associations/////////////////////
-// db.User.belongsTo(db.Base);
+db.User.belongsTo(db.Base);
 db.Base.hasMany(db.User);
-// db.Item.belongsTo(db.Category);
+db.Item.belongsTo(db.Category);
 db.Category.hasMany(db.Item);
 db.User.hasMany(db.Item);
 ////////////////////////////////////
