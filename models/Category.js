@@ -11,20 +11,5 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false
     });
 
-    // Category.associate = function(models) {
-    //     // Using additional options like CASCADE etc for demonstration
-    //     // Can also simply do Task.belongsTo(models.User);
-    //     Category.hasMany(models.Item, {
-    //         onDelete: "CASCADE",
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
-
     return Category;
-
-
-    //hasMany.Item
-
 };

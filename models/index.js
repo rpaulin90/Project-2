@@ -36,7 +36,7 @@ db.Base.hasMany(db.User);
 db.Item.belongsTo(db.Category);
 db.Category.hasMany(db.Item);
 db.User.hasMany(db.Item);
-
+db.Item.belongsTo(db.User);
 //////////// JUST ADDED ////////
 db.Base.hasMany(db.Item);
 db.Item.belongsTo(db.Base);

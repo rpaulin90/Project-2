@@ -14,30 +14,5 @@ module.exports = function(sequelize, DataTypes)
         timestamps: false
     });
 
-    // Item.associate = function(models) {
-    //     // Using additional options like CASCADE etc for demonstration
-    //     // Can also simply do Task.belongsTo(models.User);
-    //     Item.belongsTo(models.User, {
-    //         onDelete: "CASCADE",
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
-    //
-    // Item.associate = function(models) {
-    //     // Using additional options like CASCADE etc for demonstration
-    //     // Can also simply do Task.belongsTo(models.User);
-    //     Item.belongsTo(models.Category, {
-    //         onDelete: "CASCADE",
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
-
-
 	return Item;
-
-
 };
