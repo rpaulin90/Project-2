@@ -27,16 +27,18 @@
 
     <div class="container">
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav nav-pills">
-                    <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">Home</button></a></li>
-                    <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">Create a post</button></a></li>
-                    <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">My Post</button></a></li>
-                    <li role="presentation"><a href="#"><button type="button" class="btn btn-primary nav-right">Log out</button></a></li>
-                </ul>
-            </div>
-        </nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Create a post</a></li>
+      <li><a href="#">My post</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Log off</a></li>
+    </ul>
+  </div>
+</nav>
 
         <div class="panel panel-default">
             <div class="panel-body">
@@ -66,8 +68,8 @@
                 <h4>Item name</h4>
                 <input type="text" name="" id="name" class="form-control" required>
 
-                <h4>Price</h4>
-                <input type="text" name="" id="price" class="form-control" required>
+                <h4>Price</h4>    
+                <input class="form-control" type="number" value="" id="price">
 
                 <form>
                     <div class="form-group">
