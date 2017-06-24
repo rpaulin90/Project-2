@@ -21,6 +21,31 @@ module.exports = function(sequelize, DataTypes) {
 		// 		}
 	});
 
+    // User.associate = function(models) {
+    //     // Using additional options like CASCADE etc for demonstration
+    //     // Can also simply do Task.belongsTo(models.User);
+    //     User.belongsTo(models.Base, {
+    //         onDelete: "CASCADE",
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
+    //
+    // User.associate = function(models) {
+    //     // Using additional options like CASCADE etc for demonstration
+    //     // Can also simply do Task.belongsTo(models.User);
+    //     User.hasMany(models.Item, {
+    //         onDelete: "CASCADE",
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
+
+    // belongsTo.Base
+    // hasMany.Item
+
 	return User;
 
 
