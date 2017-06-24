@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="form-group">
+                <h4>Where is this item located ?</h4>
+                <select class="form-control" id="post_item_base">
+                    <option value="0">-- Choose a base --</option>
+                    <option value="1">Houston MEPS</option>
+                    <option value="2">National Guard</option>
+                    <option value="3">Fort Sam Houston</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <h4>What category this item belongs to ?</h4>
+                <select class="form-control" id="post_item_category">
+                    <option value="0">-- Choose a category --</option>
+                    <option value="1">Antiques</option>
+                    <option value="2">Appliances</option>
+                    <option value="3">Arts and Crafts</option>
+                    <option value="4">Baby/Kid Stuff</option>
+                    <option value="5">Bicycles</option>
+                    <option value="6">Books</option>
+                    <option value="7">Clothing</option>
+                    <option value="8">Electronics</option>
+                    <option value="9">Furniture</option>
+                    <option value="10">Household Items</option>
+                    <option value="11">Jewelry</option>
+                    <option value="12">Military Gear</option>
+                    <option value="13">Miscellaneous</option>
+                    <option value="14">Seasonal</option>
+                    <option value="15">Sporting Goods</option>
+                    <option value="16">Tools</option>
+                    <option value="17">Toys</option>
+                    <option value="18">Video Games</option>
+                </select>
+            </div>
+
+            <h4>Item name</h4>
+            <input type="text" name="" id="post_item_name" class="form-control" required>
+
+            <h4>Price</h4>
+            <input class="form-control" type="number" value="" id="post_item_price">
+
+            <h4>Image File</h4>
+            <input class="form-control" type="text" value="" id="post_item_image">
+
+            <form>
+                <div class="form-group">
+                    <h4 for="comment">Description</h4>
+                    <textarea class="form-control" rows="5" id="post_item_description"></textarea>
+                </div>
+            </form>
+
+            <hr>
+
+            <!-- Submit button -->
+            <button value="{{UserId}}" type="submit" class="btn btn-primary btn-lg " id="post_item_submit">Post!</button>
+
+        </div>
+    </div>
+
+</div>

@@ -14,7 +14,7 @@ $(".homepage_category_link").on("click",function(){
 
 $("#make_a_post_btn").on("click",function(){
 
-   console.log(current_user_id);
+   $(this).attr("href", "/" + current_user_id + "/make_a_post")
 
 });
 

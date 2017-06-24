@@ -5,6 +5,8 @@ var db = require("../models");
 
 var express = require("express");
 
+var firebase = require("firebase");
+
 module.exports = function(app) {
 
 
@@ -35,9 +37,6 @@ module.exports = function(app) {
 
     });
 
-    // need to create items table and test out
-    // each item links to a user and that user has a base_id...how do we connect all the tables to get the info here?
-    // Steven's part??
 
     app.get("/api/:base/:category", function(req, res) {
 
@@ -58,6 +57,22 @@ module.exports = function(app) {
                 items: items
             });
         });
+
+    });
+
+    app.get("/:current_user_id/make_a_post", function(req, res) {
+
+        db.User.findOne({
+            where: {
+                firebase_id: req.params.current_user_id
+
+            }
+        }).then(function(results) {
+
+            console.log(results.dataValues);
+            res.render("make_a_post",{UserId: results.dataValues.id});
+        });
+
 
     });
 

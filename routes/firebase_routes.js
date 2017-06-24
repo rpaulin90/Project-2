@@ -5,15 +5,15 @@ var db = require("../models");
 
 var firebase = require("firebase");
 
-var config = {
-    apiKey: "AIzaSyBxA2FeFK2bTDV-H4LcKS-pSaxxN67G_bw",
-    authDomain: "pets-59c22.firebaseapp.com",
-    databaseURL: "https://pets-59c22.firebaseio.com",
-    projectId: "pets-59c22",
-    storageBucket: "pets-59c22.appspot.com",
-    messagingSenderId: "397469016940"
-};
-firebase.initializeApp(config);
+// var config = {
+//     apiKey: "AIzaSyBxA2FeFK2bTDV-H4LcKS-pSaxxN67G_bw",
+//     authDomain: "pets-59c22.firebaseapp.com",
+//     databaseURL: "https://pets-59c22.firebaseio.com",
+//     projectId: "pets-59c22",
+//     storageBucket: "pets-59c22.appspot.com",
+//     messagingSenderId: "397469016940"
+// };
+// firebase.initializeApp(config);
 
 var express = require("express");
 
