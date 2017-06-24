@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
 
-        db.Categorie.findAll({
+        db.Category.findAll({
             // where: {
             //     firebase_id: req.body.uid
             // }
@@ -57,7 +57,7 @@ module.exports = function(app) {
 
         // ignore the below code, I just have it here to test out the code
 
-        db.Categorie.findAll({
+        db.Category.findAll({
             where: {
                 id: req.params.category
             }
