@@ -12,27 +12,27 @@ module.exports = function(sequelize, DataTypes)
 		price: {type: DataTypes.DECIMAL(10,2), defaultValue: 0.00}
 	});
 
-    Item.associate = function(models) {
-        // Using additional options like CASCADE etc for demonstration
-        // Can also simply do Task.belongsTo(models.User);
-        Item.belongsTo(models.User, {
-            onDelete: "CASCADE",
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
-    Item.associate = function(models) {
-        // Using additional options like CASCADE etc for demonstration
-        // Can also simply do Task.belongsTo(models.User);
-        Item.belongsTo(models.Category, {
-            onDelete: "CASCADE",
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Item.associate = function(models) {
+    //     // Using additional options like CASCADE etc for demonstration
+    //     // Can also simply do Task.belongsTo(models.User);
+    //     Item.belongsTo(models.User, {
+    //         onDelete: "CASCADE",
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
+    //
+    // Item.associate = function(models) {
+    //     // Using additional options like CASCADE etc for demonstration
+    //     // Can also simply do Task.belongsTo(models.User);
+    //     Item.belongsTo(models.Category, {
+    //         onDelete: "CASCADE",
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
 
 	return Item;

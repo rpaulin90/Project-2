@@ -12,16 +12,16 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false
     });
 
-    Base.associate = function(models) {
-        // Using additional options like CASCADE etc for demonstration
-        // Can also simply do Task.belongsTo(models.User);
-        Base.hasMany(models.User, {
-            onDelete: "CASCADE",
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Base.associate = function(models) {
+    //     // Using additional options like CASCADE etc for demonstration
+    //     // Can also simply do Task.belongsTo(models.User);
+    //     Base.hasMany(models.User, {
+    //         onDelete: "CASCADE",
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Base;
 
