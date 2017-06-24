@@ -14,6 +14,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var current_user_id;
+
 // END FIREBASE CONFIG
 
 // MODAL DISPLAY
@@ -176,6 +178,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         var currentUser = firebase.auth().currentUser;
         var id = currentUser.uid;
 
+        current_user_id = id;
+
         console.log("logged in as " + id);
 
         $.post("/api/current_user",{uid: id},function(data){
@@ -219,3 +223,4 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     }
 });
+

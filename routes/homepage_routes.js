@@ -41,31 +41,23 @@ module.exports = function(app) {
 
     app.get("/api/:base/:category", function(req, res) {
 
-        // db.Item.findAll({
-        //      where: {
-        //          base_id: req.params.base,
-        //          category: req.params.category
-        //      }
-        // }).then(function(results) {
-        //
-        //
-        //
-        //     res.render("index",{
-        //         categories: categories
-        //     });
-        // });
-
-        // ignore the below code, I just have it here to test out the code
-
-        db.Category.findAll({
-            where: {
-                id: req.params.category
-            }
+        db.Item.findAll({
+             where: {
+                 BaseId: req.params.base,
+                 CategoryId: req.params.category
+             }
         }).then(function(results) {
-            console.log(results);
-            res.json(results);
-        });
 
+            var items = [];
+
+            for(var x = 0; x < results.length; x++){
+                items.push(results[x].dataValues);
+            }
+
+            res.render("item_list", {
+                items: items
+            });
+        });
 
     });
 

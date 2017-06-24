@@ -10,7 +10,9 @@ module.exports = function(sequelize, DataTypes)
 		description: DataTypes.TEXT,
 		image_link: DataTypes.TEXT,
 		price: {type: DataTypes.DECIMAL(10,2), defaultValue: 0.00}
-	});
+	},{
+        timestamps: false
+    });
 
     // Item.associate = function(models) {
     //     // Using additional options like CASCADE etc for demonstration

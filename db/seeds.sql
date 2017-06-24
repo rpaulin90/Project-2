@@ -19,3 +19,7 @@ VALUES
 ("Toys"),
 ("Video Games");
 
+
+INSERT INTO bases (category_name)
+VALUES
+("Antiques"),

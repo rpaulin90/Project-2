@@ -28,7 +28,7 @@ module.exports = function(app) {
             firebase_id: req.body.uid,
             image_link: req.body.image,
             rank: req.body.rank,
-            base_id: req.body.base
+            BaseId: req.body.base
 
         }).then(function() {
             res.json(req.body);
