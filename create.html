@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Post</title>
+
+    <!--Bootstrap.css-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap.js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+
+        </script>
+
+</head>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">Home</button></a></li>
+            <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">Create a post</button></a></li>
+            <li role="presentation"><a href="#"><button type="button" class="btn btn-primary">My Post</button></a></li>
+            <li role="presentation"><a href="#"><button type="button" class="btn btn-primary nav-right">Log out</button></a></li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <h4>Where is this item located ?</h4>
+                    <select class="form-control" id="q1">
+	 		            <option value=""></option>
+                        <option value="1">Fort Knox</option>
+                        <option value="2">Area 51</option>
+                        <option value="3">Fort Powers</option>
+                        <option value="4">Fort YoMaMA</option>
+      	            </select>
+                </div>
+
+                <div class="form-group">
+                    <h4>What category this item belongs to ?</h4>
+                    <select class="form-control" id="q1">
+	 		            <option value=""></option>
+                        <option value="1">TV</option>
+                        <option value="2">Beauty</option>
+                        <option value="3">Arms</option>
+                        <option value="4">Miscellaneous</option>
+      	            </select>
+                </div>
+
+                <h4>Item name</h4>
+                <input type="text" name="" id="name" class="form-control" required>
+
+                <h4>Price</h4>
+                <input type="text" name="" id="photo" class="form-control" required>
+
+                <form>
+                    <div class="form-group">
+                        <h4 for="comment">Description</h4>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                </form>
+
+                <hr>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-lg " id="submit">Post!</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    </script>
+
+
+
+</body>
+
+</html>
