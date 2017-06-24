@@ -11,14 +11,14 @@ module.exports = function(sequelize, DataTypes) {
         firebase_id: DataTypes.STRING,
         image_link: DataTypes.TEXT,
         rank: DataTypes.STRING,
-        base_id: {
-        			type: DataTypes.INTEGER, 
-        			allowNull: false, 
-        			references: {
-        				model: Base,
-        				key: id,
-        			}
-				}
+		// base_id: {
+		// 			type: DataTypes.INTEGER, 
+		// 			allowNull: false, 
+		// 			references: {
+		// 				model: Base,
+		// 				key: id,
+		// 			}
+		// 		}
 	});
 
 	return User;
