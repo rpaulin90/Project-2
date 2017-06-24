@@ -1,0 +1,102 @@
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+
+        <!-- LOGIN MODAL -->
+        <!-- DEFAULT IS DISPLAY: NONE UNTIL USER CLICKS ON LOG IN-->
+        <div class="modal-dialog" id="login_form" style="display: none">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Log In</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email_login" placeholder="Enter email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd_login" placeholder="Enter password" name="pwd">
+                            </div>
+
+                            <button type="submit" class="btn btn-default" id="sign_in">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal_footer">
+                        <span id="go_to_register"><a href="#">Register</a></span>
+                        <span> or </span>
+                        <span class="password">Reset <a href="#">password</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- REGISTER MODAL -->
+        <!-- DEFAULT IS DISPLAY: BLOCK UNTIL USER CLICKS ON LOG IN-->
+        <div class="modal-dialog" id="register_form" style="display: block">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Register</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name_register" placeholder="Enter name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Base:</label>
+                                <div class="dropdown">
+                                    <select id="base_register">
+                                        <option value="0">-- Choose a base --</option>
+                                        <option value="1">Houston MEPS</option>
+                                        <option value="2">National Guard</option>
+                                        <option value="3">Fort Sam Houston</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image Link:</label>
+                                <input type="text" class="form-control" id="image_register" placeholder="Enter image link" name="image">
+                            </div>
+                            <div class="form-group">
+                                <label for="rank">Rank:</label>
+                                <input type="text" class="form-control" id="rank_register" placeholder="Enter rank " name="rank">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email_register" placeholder="Enter email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd_register" placeholder="Enter password" name="pwd">
+                            </div>
+                            <p style="color: red; display: none" id="name_reminder">Please enter a name</p>
+                            <p style="color: red; display: none" id="email_reminder">Please enter a valid email</p>
+                            <p style="color: red; display: none" id="base_reminder">Please enter a base</p>
+                            <p style="color: red; display: none" id="image_reminder">Please enter an image link</p>
+                            <p style="color: red; display: none" id="rank_reminder">Please enter a rank/p>
+                            <p style="color: red; display: none" id="password_reminder">Please enter a valid password</p>
+                            <button type="submit" class="btn btn-default" id="create_account">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal_footer">
+                        <span id="go_to_login"><a href="#">Login</a></span>
+                        <span> or </span>
+                        <span class="password">Reset <a href="#">password</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

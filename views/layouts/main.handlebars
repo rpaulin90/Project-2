@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" />
-    <title>Pets</title>
+    <title>Military Marketplace</title>
 </head>
 <body>
+{{> navbar }}
+{{> register_login_modal }}
+
 {{{ body }}}
-<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="/js/register_login_logic.js"></script>
+<script src="/js/homepage_logic.js"></script>
 </body>
 </html>
