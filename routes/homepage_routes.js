@@ -12,18 +12,15 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
 
-        db.Category.findAll({
-            // where: {
-            //     firebase_id: req.body.uid
-            // }
-        }).then(function(results) {
+        db.Category.findAll().then(function(results) {
 
             var categories = [];
 
             for(var x = 0; x < results.length; x++){
                 categories.push({
                     id: results[x].dataValues.id,
-                    category: results[x].dataValues.category_name
+                    category: results[x].dataValues.category_name,
+                    url_slug: results[x].dataValues.url_slug
                 });
                 console.log(results[x].dataValues.category_name);
             }
@@ -42,8 +39,8 @@ module.exports = function(app) {
 
         db.Item.findAll({
              where: {
-                 BaseId: req.params.base,
-                 CategoryId: req.params.category
+                 url_slug_base: req.params.base,
+                 url_slug_category: req.params.category
              }
         }).then(function(results) {
 
@@ -69,12 +66,12 @@ module.exports = function(app) {
             }
         }).then(function(results) {
 
-            console.log(results.dataValues);
             res.render("make_a_post",{UserId: results.dataValues.id});
         });
 
 
     });
+
 
 
 };

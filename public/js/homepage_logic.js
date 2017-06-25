@@ -14,7 +14,9 @@ $(".homepage_category_link").on("click",function(){
 
 $("#make_a_post_btn").on("click",function(){
 
-   $(this).attr("href", "/" + current_user_id + "/make_a_post")
+    // We need to revisit this. I think there is a better way to get the firebase_id from the front end to the back end that does not involve putting it in the URL.
+
+   $(this).attr("href", "/" + current_user_id + "/make_a_post");
 
 });
 

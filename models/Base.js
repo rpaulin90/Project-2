@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes) {
     var Base = sequelize.define("Base", 
     {
         id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
-        base_name: DataTypes.STRING
+        base_name: DataTypes.STRING,
+        url_slug: DataTypes.STRING
 
     },{
         timestamps: false

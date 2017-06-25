@@ -13,8 +13,10 @@ $("#post_item_submit").on("click",function(){
         image_link: $("#post_item_image").val().trim(),
         price: $("#post_item_price").val().trim(),
         CategoryId: $("#post_item_category").val().trim(),
+        category_name: $("#post_item_category option:selected").text(),
         UserId: $(this).attr("value"),
-        BaseId: $("#post_item_base").val().trim()
+        BaseId: $("#post_item_base").val().trim(),
+        base_name: $("#post_item_base option:selected").text()
     };
     //
 

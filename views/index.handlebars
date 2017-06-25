@@ -5,16 +5,16 @@
 <div class="dropdown center_align" id="homepage_dropdown">
     <select id="bases_homepage">
         <option value="0">-- Choose a base (default all bases) --</option>
-        <option value="1">Houston MEPS</option>
-        <option value="2">National Guard</option>
-        <option value="3">Fort Sam Houston</option>
+        <option value="houston-meps">Houston MEPS</option>
+        <option value="national-guard">National Guard</option>
+        <option value="fort-sam-houston">Fort Sam Houston</option>
     </select>
 </div>
 
 <div class="container center_align" id="homepage_categories">
 
     {{#each categories }}
-        <div class="col-xs-4 homepage_category"><a href="#" class="homepage_category_link" value={{this.id}}>{{category}}</a></div>
+        <div class="col-xs-4 homepage_category"><a href="#" class="homepage_category_link" value={{this.url_slug}}>{{category}}</a></div>
     {{/each}}
 </div>
 

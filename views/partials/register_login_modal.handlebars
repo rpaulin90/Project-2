@@ -29,7 +29,7 @@
                     <div class="modal_footer">
                         <span id="go_to_register"><a href="#">Register</a></span>
                         <span> or </span>
-                        <span class="password">Reset <a href="#">password</a></span>
+                        <span id="reset_pwd_login"> <a href="#">Reset Password</a></span>
                     </div>
                 </div>
             </div>
@@ -53,6 +53,10 @@
                                 <input type="text" class="form-control" id="name_register" placeholder="Enter name" name="name">
                             </div>
                             <div class="form-group">
+                                <label for="rank">Rank:</label>
+                                <input type="text" class="form-control" id="rank_register" placeholder="Enter rank " name="rank">
+                            </div>
+                            <div class="form-group">
                                 <label for="name">Base:</label>
                                 <div class="dropdown">
                                     <select id="base_register">
@@ -66,10 +70,6 @@
                             <div class="form-group">
                                 <label for="image">Image Link:</label>
                                 <input type="text" class="form-control" id="image_register" placeholder="Enter image link" name="image">
-                            </div>
-                            <div class="form-group">
-                                <label for="rank">Rank:</label>
-                                <input type="text" class="form-control" id="rank_register" placeholder="Enter rank " name="rank">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
@@ -91,12 +91,42 @@
                     <div class="modal_footer">
                         <span id="go_to_login"><a href="#">Login</a></span>
                         <span> or </span>
-                        <span class="password">Reset <a href="#">password</a></span>
+                        <span class="password" id="reset_pwd_register"> <a href="#">Reset Password</a></span>
                     </div>
                 </div>
             </div>
 
         </div>
+
+        <div class="modal-dialog" id="reset_pwd_form" style="display: none">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reset Password</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="text" class="form-control" id="email_password_reset" placeholder="Enter email" name="email">
+                            </div>
+
+                            <button type="submit" class="btn btn-default" id="resetPassword">Submit</button>
+                        </form>
+                        <p style="color: darkgreen; display: none" id="reset_success">Check your email to reset your password</p>
+                    </div>
+                    <div class="modal_footer">
+                        <span id="go_to_login_reset"><a href="#">Login</a></span>
+                        <span> or </span>
+                        <span id="go_to_register_reset"><a href="#">Register</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </div>

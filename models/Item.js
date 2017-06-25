@@ -9,7 +9,10 @@ module.exports = function(sequelize, DataTypes)
 		name: DataTypes.STRING,
 		description: DataTypes.TEXT,
 		image_link: DataTypes.TEXT,
-		price: {type: DataTypes.DECIMAL(10,2), defaultValue: 0.00}
+		price: {type: DataTypes.DECIMAL(10,2), defaultValue: 0.00},
+		url_slug: DataTypes.STRING,
+		url_slug_base: DataTypes.STRING,
+		url_slug_category: DataTypes.STRING
 	},{
         timestamps: false
     });

@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
 
     var Category = sequelize.define("Category", {
         id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
-        category_name: DataTypes.STRING
+        category_name: DataTypes.STRING,
+        url_slug: DataTypes.STRING
 
     },{
         timestamps: false

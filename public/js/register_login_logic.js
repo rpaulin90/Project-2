@@ -23,6 +23,7 @@ var current_user_id;
 $("#go_to_register").on("click",function(){
 
    $("#login_form").css("display","none");
+   $("#reset_pwd_form").css("display","none");
    $("#register_form").css("display","block");
 
 });
@@ -30,7 +31,40 @@ $("#go_to_register").on("click",function(){
 $("#go_to_login").on("click",function(){
 
     $("#register_form").css("display","none");
+    $("#reset_pwd_form").css("display","none");
     $("#login_form").css("display","block");
+
+});
+
+$("#reset_pwd_register").on("click",function(){
+
+    $("#register_form").css("display","none");
+    $("#reset_pwd_form").css("display","block");
+    $("#login_form").css("display","none");
+
+});
+
+$("#go_to_login_reset").on("click",function(){
+
+    $("#register_form").css("display","none");
+    $("#reset_pwd_form").css("display","none");
+    $("#login_form").css("display","block");
+
+});
+
+$("#go_to_register_reset").on("click",function(){
+
+    $("#login_form").css("display","none");
+    $("#reset_pwd_form").css("display","none");
+    $("#register_form").css("display","block");
+
+});
+
+$("#reset_pwd_login").on("click",function(){
+
+    $("#register_form").css("display","none");
+    $("#reset_pwd_form").css("display","block");
+    $("#login_form").css("display","none");
 
 });
 
@@ -222,5 +256,23 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
     }
+});
+
+/// RESET PASSWORD LOGIC
+$("#resetPassword").on('click', function(event) {
+
+    event.preventDefault();
+
+    var email_password_reset = $("#email_password_reset").val();
+
+
+    firebase.auth().sendPasswordResetEmail(email_password_reset).then(function () {
+        $("#reset_success").toggle(2000).toggle(2000)
+        // Email sent.
+    }, function (error) {
+        if (error) {
+            console.log(error)
+        }
+    });
 });
 
