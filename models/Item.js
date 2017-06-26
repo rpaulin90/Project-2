@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes)
 		url_slug_base: DataTypes.STRING,
 		url_slug_category: DataTypes.STRING
 	},{
-        timestamps: false
+        timestamps: true
     });
 
 	return Item;

@@ -1,7 +1,24 @@
 
-<ul>
+<div class="container">
+
+    <h1>{{category}} items in {{base}}</h1>
+
     {{#each items }}
-        <li>{{name}}</li>
-        <li>{{description}}</li>
+
+        <div class="media">
+            <!--<a class="pull-left" href="#">-->
+            <!---->
+            <!--</a>-->
+            <img class="media-object pull-left" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png" alt="{{image_link}}" style="height: 10%; width: 10%">
+            <div class="media-body">
+                <!-- Decided to go with UserId in the URL instead of a user url slug because there could be people with same name -->
+                <h4 class="media-heading"><a href="/item_page/{{this.UserId}}/{{this.url_slug}}">{{name}}</a></h4>
+                <p>Price: $ {{price}}</p>
+                <p>Posted on: {{createdAt}}</p>
+
+            </div>
+        </div>
     {{/each}}
-</ul>
+
+</div>
+

@@ -7,6 +7,10 @@ var express = require("express");
 
 var firebase = require("firebase");
 
+var urlSlug = require('url-slug');
+
+var moment = require('moment');
+
 module.exports = function(app) {
 
 
@@ -47,11 +51,31 @@ module.exports = function(app) {
             var items = [];
 
             for(var x = 0; x < results.length; x++){
-                items.push(results[x].dataValues);
+                items.push({
+
+                    id: results[x].dataValues.id,
+                    name: results[x].dataValues.name,
+                    description: results[x].dataValues.description,
+                    image_link: results[x].dataValues.image_link,
+                    price: results[x].dataValues.price,
+                    url_slug: results[x].dataValues.url_slug,
+                    url_slug_base: results[x].dataValues.url_slug_base,
+                    url_slug_category: results[x].dataValues.url_slug_category,
+                    createdAt: moment(results[x].dataValues.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a"),
+                    updatedAt: results[x].dataValues.updatedAt,
+                    CategoryId: results[x].dataValues.CategoryId,
+                    UserId: results[x].dataValues.UserId,
+                    BaseId: results[x].dataValues.BaseId
+
+                });
             }
 
+
             res.render("item_list", {
-                items: items
+                items: items,
+                base: urlSlug.revert(req.params.base,"-","titlecase"),
+                category: urlSlug.revert(req.params.category,"-","titlecase")
+
             });
         });
 
@@ -66,7 +90,7 @@ module.exports = function(app) {
             }
         }).then(function(results) {
 
-            res.render("make_a_post",{UserId: results.dataValues.id});
+            res.render("make_a_post",results.dataValues);
         });
 
 

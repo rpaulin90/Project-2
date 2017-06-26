@@ -187,7 +187,7 @@ $("#sign_in").on("click",function(event){
 
 $("#logout_btn").on("click",function(event){
 
-    event.preventDefault();
+    // event.preventDefault();
 
     firebase.auth().signOut().then(function () {
 
@@ -242,18 +242,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#logout").css("display","none");
         $("#make_a_post").css("display","none");
         $("#my_posts").css("display","none");
-
-        // $.get("/",function(){
-        //
-        //     window.location.href = "/";
-        //     console.log("no one logged in");
-        // });
-
-        // $("#uid").text("");
-        // $("#homepage").css("display","block");
-        // $("#user_page").css("display","none");
-        // console.log("logged out");
-
 
     }
 });
