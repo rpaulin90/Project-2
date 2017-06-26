@@ -41,43 +41,86 @@ module.exports = function(app) {
 
     app.get("/api/:base/:category", function(req, res) {
 
-        db.Item.findAll({
-             where: {
-                 url_slug_base: req.params.base,
-                 url_slug_category: req.params.category
-             }
-        }).then(function(results) {
+        if(req.params.base === "all-bases"){
 
-            var items = [];
+            db.Item.findAll({
+                where: {
+                    url_slug_category: req.params.category
+                }
+            }).then(function(results) {
 
-            for(var x = 0; x < results.length; x++){
-                items.push({
+                var items = [];
 
-                    id: results[x].dataValues.id,
-                    name: results[x].dataValues.name,
-                    description: results[x].dataValues.description,
-                    image_link: results[x].dataValues.image_link,
-                    price: results[x].dataValues.price,
-                    url_slug: results[x].dataValues.url_slug,
-                    url_slug_base: results[x].dataValues.url_slug_base,
-                    url_slug_category: results[x].dataValues.url_slug_category,
-                    createdAt: moment(results[x].dataValues.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a"),
-                    updatedAt: results[x].dataValues.updatedAt,
-                    CategoryId: results[x].dataValues.CategoryId,
-                    UserId: results[x].dataValues.UserId,
-                    BaseId: results[x].dataValues.BaseId
+                for(var x = 0; x < results.length; x++){
+                    items.push({
+
+                        id: results[x].dataValues.id,
+                        name: results[x].dataValues.name,
+                        description: results[x].dataValues.description,
+                        image_link: results[x].dataValues.image_link,
+                        price: results[x].dataValues.price,
+                        url_slug: results[x].dataValues.url_slug,
+                        url_slug_base: results[x].dataValues.url_slug_base,
+                        url_slug_category: results[x].dataValues.url_slug_category,
+                        createdAt: moment(results[x].dataValues.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a"),
+                        updatedAt: results[x].dataValues.updatedAt,
+                        CategoryId: results[x].dataValues.CategoryId,
+                        UserId: results[x].dataValues.UserId,
+                        BaseId: results[x].dataValues.BaseId
+
+                    });
+                }
+
+                res.render("item_list", {
+                    items: items,
+                    base: "all bases",
+                    category: urlSlug.revert(req.params.category,"-","titlecase")
 
                 });
-            }
-
-
-            res.render("item_list", {
-                items: items,
-                base: urlSlug.revert(req.params.base,"-","titlecase"),
-                category: urlSlug.revert(req.params.category,"-","titlecase")
-
             });
-        });
+
+        }
+
+        else {
+
+            db.Item.findAll({
+                where: {
+                    url_slug_base: req.params.base,
+                    url_slug_category: req.params.category
+                }
+            }).then(function (results) {
+
+                var items = [];
+
+                for (var x = 0; x < results.length; x++) {
+                    items.push({
+
+                        id: results[x].dataValues.id,
+                        name: results[x].dataValues.name,
+                        description: results[x].dataValues.description,
+                        image_link: results[x].dataValues.image_link,
+                        price: results[x].dataValues.price,
+                        url_slug: results[x].dataValues.url_slug,
+                        url_slug_base: results[x].dataValues.url_slug_base,
+                        url_slug_category: results[x].dataValues.url_slug_category,
+                        createdAt: moment(results[x].dataValues.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a"),
+                        updatedAt: results[x].dataValues.updatedAt,
+                        CategoryId: results[x].dataValues.CategoryId,
+                        UserId: results[x].dataValues.UserId,
+                        BaseId: results[x].dataValues.BaseId
+
+                    });
+                }
+
+
+                res.render("item_list", {
+                    items: items,
+                    base: urlSlug.revert(req.params.base, "-", "titlecase"),
+                    category: urlSlug.revert(req.params.category, "-", "titlecase")
+
+                });
+            });
+        }
 
     });
 
