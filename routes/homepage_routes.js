@@ -39,7 +39,7 @@ module.exports = function(app) {
     });
 
 
-    app.get("/api/:base/:category", function(req, res) {
+    app.get("/api/:base/:category/:page", function(req, res) {
 
         if(req.params.base === "all-bases"){
 
@@ -50,8 +50,17 @@ module.exports = function(app) {
             }).then(function(results) {
 
                 var items = [];
+                var pages = [];
 
-                for(var x = 0; x < results.length; x++){
+                var start = (parseInt(req.params.page) - 1) * 10;
+                var end;
+                if((results.length >= parseInt(start + 10))){
+                    end = parseInt(start) + 10
+                }else{
+                    end = parseInt(start) + (results.length % 10);
+                }
+
+                for(var x = start; x < end; x++){
                     items.push({
 
                         id: results[x].dataValues.id,
@@ -71,10 +80,36 @@ module.exports = function(app) {
                     });
                 }
 
+                var n = 0;
+                for(var y = 0; y < results.length; y++ ){
+
+                    if(y.toString().includes("0")){
+                        n++;
+                        if(n == req.params.page){
+                            pages.push({
+                                page: n,
+                                category_slug: req.params.category,
+                                base_slug: req.params.base,
+                                active: "active"
+                            })
+                        }else {
+                            pages.push({
+                                page: n,
+                                category_slug: req.params.category,
+                                base_slug: req.params.base,
+                                active: "not_active"
+                            })
+                        }
+                    }
+                }
+
                 res.render("item_list", {
                     items: items,
                     base: "all bases",
-                    category: urlSlug.revert(req.params.category,"-","titlecase")
+                    category: urlSlug.revert(req.params.category,"-","titlecase"),
+                    category_slug: req.params.category,
+                    base_slug: req.params.base,
+                    pages: pages
 
                 });
             });
@@ -91,8 +126,17 @@ module.exports = function(app) {
             }).then(function (results) {
 
                 var items = [];
+                var pages = [];
 
-                for (var x = 0; x < results.length; x++) {
+                var start = (parseInt(req.params.page) - 1) * 10;
+                var end;
+                if((results.length >= parseInt(start + 10))){
+                    end = parseInt(start) + 10
+                }else{
+                    end = parseInt(start) + (results.length % 10);
+                }
+
+                for (var x = start; x < end; x++) {
                     items.push({
 
                         id: results[x].dataValues.id,
@@ -112,11 +156,26 @@ module.exports = function(app) {
                     });
                 }
 
+                var n = 0;
+                for(var y = 0; y < results.length; y++ ){
 
+                    if(y.toString().includes("0")){
+                        n++;
+                        pages.push({
+                            page: n,
+                            category_slug: req.params.category,
+                            base_slug: req.params.base
+                        })
+                    }
+                }
+                console.log(pages);
                 res.render("item_list", {
                     items: items,
                     base: urlSlug.revert(req.params.base, "-", "titlecase"),
-                    category: urlSlug.revert(req.params.category, "-", "titlecase")
+                    category: urlSlug.revert(req.params.category, "-", "titlecase"),
+                    category_slug: req.params.category,
+                    base_slug: req.params.base,
+                    pages: pages
 
                 });
             });

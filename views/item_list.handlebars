@@ -3,22 +3,32 @@
 
     <h1>{{category}} ({{base}})</h1>
 
-    {{#each items }}
+    <div id="items_list">
+        {{#each items }}
 
-        <div class="media">
-            <!--<a class="pull-left" href="#">-->
-            <!---->
-            <!--</a>-->
-            <img class="media-object pull-left" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png" alt="{{image_link}}" style="height: 10%; width: 10%">
-            <div class="media-body">
-                <!-- Decided to go with UserId in the URL instead of a user url slug because there could be people with same name -->
-                <h4 class="media-heading"><a href="/item_page/{{this.UserId}}/{{this.url_slug}}">{{name}}</a></h4>
-                <p>Price: $ {{price}}</p>
-                <p>Posted on: {{createdAt}}</p>
+            <div class="media item">
+                <!--<a class="pull-left" href="#">-->
+                <!---->
+                <!--</a>-->
+                <img class="media-object pull-left" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png" alt="{{this.image_link}}" style="height: 10%; width: 10%">
+                <div class="media-body">
+                    <!-- Decided to go with UserId in the URL instead of a user url slug because there could be people with same name -->
+                    <h4 class="media-heading"><a href="/item_page/{{this.UserId}}/{{this.url_slug}}">{{this.name}}</a></h4>
+                    <p>Price: $ {{this.price}}</p>
+                    <p>Posted on: {{this.createdAt}}</p>
 
+                </div>
             </div>
-        </div>
-    {{/each}}
+        {{/each}}
+    </div>
+
+    <div style="text-align: center">
+        <ul class="pagination">
+            {{#each pages}}
+                <li class="{{this.active}}"><a href="/api/{{base_slug}}/{{category_slug}}/{{this.page}}">{{this.page}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
 
 </div>
 
