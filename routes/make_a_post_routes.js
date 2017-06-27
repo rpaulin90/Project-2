@@ -19,6 +19,9 @@ module.exports = function(app) {
             }
         }).then(function(results){
 
+            console.log("req.body.UserId: " + req.body.UserId);
+            console.log("results: " + results.dataValues.id);
+
             db.Item.create({
 
                 name: req.body.name,
@@ -29,7 +32,7 @@ module.exports = function(app) {
                 url_slug_base: urlSlug(req.body.base_name),
                 url_slug_category: urlSlug(req.body.category_name),
                 CategoryId: req.body.CategoryId,
-                UserId: results.dataValues.UserId,
+                UserId: results.dataValues.id,
                 BaseId: req.body.BaseId
 
             }).then(function(dbPost) {
