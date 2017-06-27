@@ -16,23 +16,43 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
 
-        db.Category.findAll().then(function(results) {
+        db.Category.findAll().then(function(results_categories) {
 
-            var categories = [];
 
-            for(var x = 0; x < results.length; x++){
-                categories.push({
-                    id: results[x].dataValues.id,
-                    category: results[x].dataValues.category_name,
-                    url_slug: results[x].dataValues.url_slug
+            db.Base.findAll().then(function(results_bases) {
+
+                // Putting all categories in an array to pass to handlebars file
+
+                var categories = [];
+
+                for(var x = 0; x < results_categories.length; x++){
+                    categories.push({
+                        id: results_categories[x].dataValues.id,
+                        category: results_categories[x].dataValues.category_name,
+                        url_slug: results_categories[x].dataValues.url_slug
+                    });
+                }
+
+                // Putting all bases in an array to pass to handlebars file
+
+                var bases = [];
+
+                for(var y = 0; y < results_bases.length; y++){
+                    bases.push({
+                        id: results_bases[y].dataValues.id,
+                        base: results_bases[y].dataValues.base_name,
+                        url_slug: results_bases[y].dataValues.url_slug
+                    });
+                }
+
+                res.render("index",{
+                    categories: categories,
+                    bases: bases
                 });
-                console.log(results[x].dataValues.category_name);
-            }
 
 
-            res.render("index",{
-                categories: categories
             });
+
         });
 
 
@@ -46,7 +66,8 @@ module.exports = function(app) {
             db.Item.findAll({
                 where: {
                     url_slug_category: req.params.category
-                }
+                },
+                order: [['createdAt', 'DESC']]
             }).then(function(results) {
 
                 var items = [];
@@ -183,16 +204,45 @@ module.exports = function(app) {
 
     });
 
-    app.get("/:current_user_id/make_a_post", function(req, res) {
+    app.get("/make_a_post", function(req, res) {
 
-        db.User.findOne({
-            where: {
-                firebase_id: req.params.current_user_id
+        db.Category.findAll().then(function(results_categories) {
 
-            }
-        }).then(function(results) {
 
-            res.render("make_a_post",results.dataValues);
+            db.Base.findAll().then(function(results_bases) {
+
+                // Putting all categories in an array to pass to handlebars file
+
+                var categories = [];
+
+                for(var x = 0; x < results_categories.length; x++){
+                    categories.push({
+                        id: results_categories[x].dataValues.id,
+                        category: results_categories[x].dataValues.category_name,
+                        url_slug: results_categories[x].dataValues.url_slug
+                    });
+                }
+
+                // Putting all bases in an array to pass to handlebars file
+
+                var bases = [];
+
+                for(var y = 0; y < results_bases.length; y++){
+                    bases.push({
+                        id: results_bases[y].dataValues.id,
+                        base: results_bases[y].dataValues.base_name,
+                        url_slug: results_bases[y].dataValues.url_slug
+                    });
+                }
+
+                res.render("make_a_post",{
+                    categories: categories,
+                    bases: bases
+                });
+
+
+            });
+
         });
 
 

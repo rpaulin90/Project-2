@@ -6,9 +6,9 @@
                 <h4>Where is this item located ?</h4>
                 <select class="form-control" id="post_item_base">
                     <option value="0">-- Choose a base --</option>
-                    <option value="1">Houston MEPS</option>
-                    <option value="2">National Guard</option>
-                    <option value="3">Fort Sam Houston</option>
+                    {{#each bases }}
+                        <option value="{{this.id}}">{{this.base}}</option>
+                    {{/each}}
                 </select>
             </div>
 
@@ -16,24 +16,9 @@
                 <h4>What category this item belongs to ?</h4>
                 <select class="form-control" id="post_item_category">
                     <option value="0">-- Choose a category --</option>
-                    <option value="1">Antiques</option>
-                    <option value="2">Appliances</option>
-                    <option value="3">Arts and Crafts</option>
-                    <option value="4">Baby/Kid Stuff</option>
-                    <option value="5">Bicycles</option>
-                    <option value="6">Books</option>
-                    <option value="7">Clothing</option>
-                    <option value="8">Electronics</option>
-                    <option value="9">Furniture</option>
-                    <option value="10">Household Items</option>
-                    <option value="11">Jewelry</option>
-                    <option value="12">Military Gear</option>
-                    <option value="13">Miscellaneous</option>
-                    <option value="14">Seasonal</option>
-                    <option value="15">Sporting Goods</option>
-                    <option value="16">Tools</option>
-                    <option value="17">Toys</option>
-                    <option value="18">Video Games</option>
+                    {{#each categories }}
+                        <option value="{{this.id}}">{{this.category}}</option>
+                    {{/each}}
                 </select>
             </div>
 
@@ -57,7 +42,32 @@
             <hr>
 
             <!-- Submit button -->
-            <button value="{{id}}" type="submit" class="btn btn-primary btn-lg " id="post_item_submit">Post!</button>
+            <button type="submit" class="btn btn-primary btn-lg " id="post_item_submit">Post!</button>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="post_item_modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Item Posted Successfully!</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 id="success_post_name"></h5>
+                    <p id="success_post_price"></p>
+                    <p id="success_post_base"></p>
+                    <h5>Description</h5>
+                    <div id="success_post_description" style="overflow-y: auto; width: auto; height: 200px; border: 1px solid black;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
         </div>
     </div>
