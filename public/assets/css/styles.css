@@ -26,3 +26,20 @@
 }
 
 /* END MODAL */
+
+/* CAROUSEL */
+
+.hero-slide {
+    margin-top: -20px;
+}
+ 
+.carousel {
+    height: 50%;
+}
+
+.slider-size {
+    height: 300px;
+}
+
+
+/* END CAROUSEL */
