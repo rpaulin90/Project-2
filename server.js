@@ -44,6 +44,7 @@ require("./routes/homepage_routes")(app);
 require("./routes/firebase_routes")(app);
 require("./routes/make_a_post_routes")(app);
 require("./routes/item_page_routes")(app);
+require("./routes/about_page_routes")(app);
 
 // Syncing our sequelize models and then starting our express app
 
