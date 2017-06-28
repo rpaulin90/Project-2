@@ -223,7 +223,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             $("#register_signin_btn").css("display","none");
             $("#logout").css("display","block");
             $("#make_a_post").css("display","block");
-            $("#my_posts").css("display","block");
+            $("#profile").css("display","block");
 
 
         });
@@ -241,7 +241,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#register_signin_btn").css("display","block");
         $("#logout").css("display","none");
         $("#make_a_post").css("display","none");
-        $("#my_posts").css("display","none");
+        $("#profile").css("display","none");
 
     }
 });

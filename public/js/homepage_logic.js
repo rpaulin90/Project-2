@@ -13,7 +13,7 @@ $(".homepage_category_link").on("click",function(){
 // CLICKING ON THE "MY POSTS" TAB
 // STEVEN'S PART
 
-$("#my_posts_btn").on("click",function(){
+$("#profile_btn").on("click",function(){
 
     console.log(current_user_id);
 
