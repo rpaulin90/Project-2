@@ -15,6 +15,7 @@ $(".homepage_category_link").on("click",function(){
 
 $("#profile_btn").on("click",function(){
 
+    $(this).attr("href","/profile/" + current_user_id);
     console.log(current_user_id);
 
 });
