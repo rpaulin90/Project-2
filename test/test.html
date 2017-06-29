@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Select a file to upload:
+<input type="file" name="filename" id="myFile">
+
+<p>Click the button to display the value of the name attribute of the input element.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var upload = document.getElementById("myFile");
+    alert("You selected " + upload.value);
+}
+</script>
+
+</body>
+</html>

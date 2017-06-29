@@ -4,6 +4,7 @@ USE Craigslist_db;
 CREATE TABLE bases(
 	id INT AUTO_INCREMENT,
     base_name VARCHAR(255),
+    url_slug VARCHAR(255),
     PRIMARY KEY(id));
     
 CREATE TABLE users(
@@ -22,6 +23,7 @@ CREATE TABLE users(
 CREATE TABLE categories(
 	id INT AUTO_INCREMENT,
     category_name VARCHAR(255),
+    url_slug VARCHAR(255),
     PRIMARY KEY(id));
     
 CREATE TABLE items(
