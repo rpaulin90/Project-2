@@ -80,21 +80,19 @@ function getSignedRequestItem(file){
     xhr.send();
 }
 
-function uploadFileItem(file, signedRequest, url) {
+function uploadFileItem(file, signedRequest, url){
     const xhr = new XMLHttpRequest();
     xhr.open('PUT', signedRequest);
-    xhr.onreadystatechange = () =>
-    {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4){
+            if(xhr.status === 200){
                 document.getElementById('preview_item').src = url;
                 //document.getElementById('avatar-url').value = url;
             }
-            else {
+            else{
                 alert('Could not upload file.');
             }
         }
-    }
-    ;
+    };
     xhr.send(file);
 }
