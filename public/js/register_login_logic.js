@@ -85,7 +85,7 @@ $("#create_account").on("click",function(event){
         base: $("#base_register").val(),
         email: $("#email_register").val().trim(),
         password: $("#pwd_register").val().trim(),
-        image: $("#image_register").val().trim(),
+        image: $("#preview").attr("src"),
         rank: $("#rank_register").val().trim()
 
     };
