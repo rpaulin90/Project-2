@@ -83,8 +83,7 @@ function getSignedRequestItem(file){
 function uploadFileItem(file, signedRequest, url) {
     const xhr = new XMLHttpRequest();
     xhr.open('PUT', signedRequest);
-    xhr.onreadystatechange = () =
->
+    xhr.onreadystatechange = () =>
     {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
