@@ -14,7 +14,7 @@ var moment = require('moment');
 
 var aws = require("aws-sdk");
 
-const S3_BUCKET = process.env.S3_BUCKET;
+const S3_BUCKET = process.env.S3_BUCKET_NAME;
 
 module.exports = function(app) {
     app.get('/sign-s3', function(req, res) {
