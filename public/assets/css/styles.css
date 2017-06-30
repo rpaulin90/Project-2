@@ -27,6 +27,8 @@
 
 /* END MODAL */
 
+/* About Page */
+
 /* CAROUSEL */
 
 .hero-slide {
@@ -45,7 +47,7 @@
 
 /* END CAROUSEL */
 
-/* About page Text */
+/* Text */
 .text-center {
     background: #e6e6e6;
 }
@@ -58,4 +60,6 @@ p {
     font-size: 16px;
 }
 
-/* End About page Test */
+/* Text */
+
+/* End About Page */
