@@ -14,7 +14,7 @@ var nodemailer = require('nodemailer');
 
 const EMAIL = process.env.EMAIL;
 
-const EMAIL_PWD = process.env.EMAIL.PWD;
+const EMAIL_PWD = process.env.EMAIL_PWD;
 
 module.exports = function(app) {
 
