@@ -191,6 +191,7 @@ $("#logout_btn").on("click",function(event){
 
     firebase.auth().signOut().then(function () {
 
+        // window.localStorage.loggedIn = false;
         console.log("signed out successfully")
 
     }).catch(function (error) {
@@ -213,6 +214,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var id = currentUser.uid;
 
         current_user_id = id;
+        // window.localStorage.loggedIn = true;
 
         console.log("logged in as " + id);
 

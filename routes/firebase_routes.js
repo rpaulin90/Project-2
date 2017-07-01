@@ -37,6 +37,8 @@ module.exports = function(app) {
     });
 
     app.post("/api/current_user", function(req, res) {
+        var sess = req.session;
+        sess.user_id = req.body.uid;
         db.User.findOne({
             where: {
                 firebase_id: req.body.uid
