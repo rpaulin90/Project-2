@@ -53,17 +53,19 @@ $("#post_item_submit").on("click",function(){
 
     }
 
+    else {
 
-    $.post("/api/make_post",new_item,function(data){
+        $.post("/api/make_post", new_item, function (data) {
 
-        console.log("communicated with make_post app.post");
-        $("#success_post_name").text(new_item.name);
-        $("#success_post_price").text("Price: $ " + new_item.price);
-        $("#success_post_base").text("Base: " + new_item.base_name);
-        $("#success_post_description").text(new_item.description);
-        $('#post_item_modal').modal('toggle');
+            console.log("communicated with make_post app.post");
+            $("#success_post_name").text(new_item.name);
+            $("#success_post_price").text("Price: $ " + new_item.price);
+            $("#success_post_base").text("Base: " + new_item.base_name);
+            $("#success_post_description").text(new_item.description);
+            $('#post_item_modal').modal('toggle');
 
-    });
+        });
+    }
 
 });
 
