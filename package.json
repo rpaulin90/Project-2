@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/rpaulin90/Project-2#readme",
   "dependencies": {
+    "aws-sdk": "^2.79.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",

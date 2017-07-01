@@ -26,3 +26,40 @@
 }
 
 /* END MODAL */
+
+/* About Page */
+
+/* CAROUSEL */
+
+.hero-slide {
+    margin-top: -20px;
+    background: #e6e6e6;
+}
+ 
+.carousel {
+    height: 50%;
+}
+
+.slider-size {
+    height: 380px;
+}
+
+
+/* END CAROUSEL */
+
+/* Text */
+.text-center {
+    background: #e6e6e6;
+}
+h1 {
+    font-family: 'Bree Serif', serif;
+}
+
+p {
+    font-family: 'Bitter', serif;
+    font-size: 16px;
+}
+
+/* Text */
+
+/* End About Page */

@@ -12,7 +12,7 @@ $("#post_item_submit").on("click",function(){
     var new_item = {
         name: $("#post_item_name").val().trim(),
         description: $("#post_item_description").val().trim(),
-        image_link: $("#post_item_image").val().trim(),
+        image_link: $("#preview_item").attr("src"),
         price: $("#post_item_price").val().trim(),
         CategoryId: $("#post_item_category").val().trim(),
         category_name: $("#post_item_category option:selected").text(),
