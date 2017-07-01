@@ -62,6 +62,8 @@ module.exports = function(app) {
 
             var title = 'Interest in your item: ' + req.body.item;
 
+            var description = req.body.message;
+
             let transporter = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
                 port: 465,
@@ -79,7 +81,7 @@ module.exports = function(app) {
                 to: results.dataValues.email, // list of receivers
                 subject: title, // Subject line
                 text: req.body.message, // plain text body
-                html: '<p>req.body.message</p>' // html body
+                html: "<p>" + description + "</p>" // html body
             };
 
             transporter.sendMail(mailOptions, function(error, info) {
