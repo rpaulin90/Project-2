@@ -5,7 +5,7 @@
 
 $("#post_item_submit").on("click",function(){
 
-    // event.preventDefault();
+     event.preventDefault();
 
     // NEED TO ADD VALIDATION TO FORM
 
