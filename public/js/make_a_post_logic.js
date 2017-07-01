@@ -26,6 +26,34 @@ $("#post_item_submit").on("click",function(){
     $("#post_item_image").val("");
     $("#post_item_description").val("");
 
+    // remind the user to input required information
+
+    if(new_item.name === ""){
+        $("#item_name_reminder").toggle(2000).toggle(2000)
+
+    }
+    else if($("#post_item_base").attr("value") === "0"){
+        $("#item_base_reminder").toggle(2000).toggle(2000)
+
+    }
+    else if(new_item.price === ""){
+        $("#item_price_reminder").toggle(2000).toggle(2000)
+
+    }
+    else if(new_item.category_name === ""){
+        $("#item_category_reminder").toggle(2000).toggle(2000)
+
+    }
+    else if(new_item.image_link === "http://via.placeholder.com/250x250"){
+        $("#item_image_reminder").toggle(2000).toggle(2000)
+
+    }
+    else if(new_item.description === ""){
+        $("#item_description_reminder").toggle(2000).toggle(2000)
+
+    }
+
+
     $.post("/api/make_post",new_item,function(data){
 
         console.log("communicated with make_post app.post");

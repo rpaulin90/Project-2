@@ -106,13 +106,13 @@ $("#create_account").on("click",function(event){
     else if(user.email === ""){
         $("#email_reminder").toggle(2000).toggle(2000)
     }
-    else if(user.password === ""){
+    else if(user.password === "" || user.password.length < 6){
         $("#password_reminder").toggle(2000).toggle(2000)
     }
     else if(user.rank === ""){
         $("#rank_reminder").toggle(2000).toggle(2000)
     }
-    else if(user.image === ""){
+    else if(user.image === "http://via.placeholder.com/200x200"){
         $("#image_reminder").toggle(2000).toggle(2000)
     }
     else{
