@@ -6,9 +6,10 @@
 
 $("#send_email").on("click",function(){
 
+
     var new_message = {
 
-        message: $("textarea#message").val(),
+        message: $("#comment").val(),
         seller: $(this).attr("value"),
         item: $("#item_name_seller").attr("value")
 
