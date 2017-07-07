@@ -10,12 +10,11 @@ module.exports = function(app)
 {
 	app.get("/profile", function(req, res)
 	{
-		console.log("Line 13");
-		console.log(req.session.user_id);
+		var profileData = {user:"",base:"",items:""};
 
 		if(req.session.user_id == undefined)
 		{
-			res.render("profile", {user:"",base:"",items:""});
+			res.render("profile", profileData);
 		}
 
 		db.User.findOne(
@@ -23,37 +22,44 @@ module.exports = function(app)
 			where: { firebase_id : req.session.user_id }
 		}).then(function(userResults)
 		{
-			var user = userResults.dataValues;
+			profileData.user = userResults.dataValues;
 
 			db.Base.findOne(
 			{
-				where: { id : user.BaseId }
+				where: { id : profileData.user.BaseId }
 			}).then(function(baseResults)
 			{
-				var base = baseResults.dataValues;
+				profileData.base = baseResults.dataValues;
 
-				console.log("userid: " + user.id);
-				db.Item.findAll().then(function(itemResults)
+				console.log("userid: " + profileData.user.id);
+				db.Item.findAll(
 				{
-					var items = [];
+					where: { UserId : profileData.user.id }
+				}).then(function(itemResults)
+				{
+					profileData.items = [];
 					for(var i = 0; i < itemResults.length; i++)
 					{
-						items.push(itemResults[i].dataValues);
-						items[i].BaseName = base.base_name;
-						items[i].UserName = user.name;
-						items[i].UserRank = user.rank;
+						profileData.items.push(itemResults[i].dataValues);
+						profileData.items[i].BaseName = profileData.base.base_name;
+						profileData.items[i].UserName = profileData.user.name;
+						profileData.items[i].UserRank = profileData.user.rank;
 					}
 
-					console.log(items);
+					console.log(profileData.items);
 
-					res.render("profile",
-					{
-						user : user,
-						base : base,
-						items : items
-					});
+					res.render("profile", profileData);
 				});	
 			});
 		});
+	});
+
+	app.post("/api/delete_post", function(req, res)
+	{
+		var clause = req.body;
+		db.Item.destroy(clause).then(function(data)
+		{
+			res.json({hello:"hello"});
+		});	
 	});
 };
