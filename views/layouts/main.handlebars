@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+
+    {{!--Bootstrap CSS--}}
+    {{!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">--}}
+
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <!-- My CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" />
-    <title>Military Marketplace</title>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--  Google fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Yrsa" rel="stylesheet">
+    <!--  Google Icons  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>military-marketplace</title>
 </head>
+
+
 <body>
 {{> navbar }}
 {{> register_login_modal }}
 
 {{{ body }}}
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--Import jQuery and materialize.js // jQuery suppose to come first // DO NOT CHANGE THE ORDER!!! -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+{{!--  Bootstrap.js  --}}
+{{!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+
+{{!--  Firebase  --}}
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+{{!--  Other js files  --}}
+<script src="/js/test.js"></script>
 <script src="/js/register_login_logic.js"></script>
 <script src="/js/homepage_logic.js"></script>
 <script src="/js/make_a_post_logic.js"></script>

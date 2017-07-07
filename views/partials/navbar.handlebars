@@ -1,18 +1,23 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand active" href="/">Home</a>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">
+                <p class="logo">Military Marketplace</p>
+            </a>
+
+            <!--  Allows navbar to collapse into sidebar on mobile devices  -->
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+
+                <!-- Modal Trigger -->
+                <li><a class="waves-effect waves-light btn z-depth-5 indigo darken-2 modal-trigger" href="#modal1">Log in / Sign up</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">Javascript</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav">
-            <!-- NEED LINKS -->
-            <li style="display: none" id="make_a_post"><a href="/make_a_post" id="make_a_post_btn">Make a Post</a></li>
-            <li style="display: none" id="my_posts"><a href="#" id="my_posts_btn">My Posts</a></li>
-            <li id="about"><a href="about" id="about_btn">About</a></li>
-            <li id="contact"><a href="#" id="contact_btn">Contact</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" id="register_signin_btn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Register/Sign Up</a></li>
-            <li style="display: none" id="logout"><a href="/" id="logout_btn"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>

@@ -85,7 +85,7 @@ $("#create_account").on("click",function(event){
         base: $("#base_register").val(),
         email: $("#email_register").val().trim(),
         password: $("#pwd_register").val().trim(),
-        image: $("#image_register").val().trim(),
+        image: $("#preview").attr("src"),
         rank: $("#rank_register").val().trim()
 
     };
@@ -106,13 +106,13 @@ $("#create_account").on("click",function(event){
     else if(user.email === ""){
         $("#email_reminder").toggle(2000).toggle(2000)
     }
-    else if(user.password === ""){
+    else if(user.password === "" || user.password.length < 6){
         $("#password_reminder").toggle(2000).toggle(2000)
     }
     else if(user.rank === ""){
         $("#rank_reminder").toggle(2000).toggle(2000)
     }
-    else if(user.image === ""){
+    else if(user.image === "http://via.placeholder.com/200x200"){
         $("#image_reminder").toggle(2000).toggle(2000)
     }
     else{
@@ -191,6 +191,7 @@ $("#logout_btn").on("click",function(event){
 
     firebase.auth().signOut().then(function () {
 
+        // window.localStorage.loggedIn = false;
         console.log("signed out successfully")
 
     }).catch(function (error) {
@@ -213,6 +214,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var id = currentUser.uid;
 
         current_user_id = id;
+        // window.localStorage.loggedIn = true;
 
         console.log("logged in as " + id);
 
@@ -223,7 +225,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             $("#register_signin_btn").css("display","none");
             $("#logout").css("display","block");
             $("#make_a_post").css("display","block");
-            $("#my_posts").css("display","block");
+            $("#profile").css("display","block");
 
 
         });
@@ -241,7 +243,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#register_signin_btn").css("display","block");
         $("#logout").css("display","none");
         $("#make_a_post").css("display","none");
-        $("#my_posts").css("display","none");
+        $("#profile").css("display","none");
 
     }
 });

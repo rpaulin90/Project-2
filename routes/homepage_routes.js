@@ -16,6 +16,13 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
 
+        var sess = req.session;
+
+        // clear out the cookie when they log out
+        // if(window.localStorage.loggedIn == false)
+        // {
+        //     sess.user_id = null;
+        // }
         db.Category.findAll().then(function(results_categories) {
 
 
@@ -247,6 +254,8 @@ module.exports = function(app) {
 
 
     });
+
+
 
 
 

@@ -1,4 +1,4 @@
-<div class="container">
+{{!--<div class="container">
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
 
@@ -69,7 +69,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="image">Image Link:</label>
-                                <input type="text" class="form-control" id="image_register" placeholder="Enter image link" name="image">
+                                <!--<input type="text" class="form-control" id="image_register" placeholder="Enter image link" name="image">-->
+                                <div>
+                                    <p style="font-family: inherit; size: 12px">Please choose a file</p>
+                                    <img id="preview" src="http://via.placeholder.com/200x200" style="width: 200px; height: 200px; margin-bottom: 10px">
+                                    <input type="file" id="file-input">
+                                </div>
+
+
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
@@ -77,7 +84,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd_register" placeholder="Enter password" name="pwd">
+                                <input type="password" class="form-control" id="pwd_register" placeholder="Enter password (at least 6 characters)" name="pwd">
                             </div>
                             <p style="color: red; display: none" id="name_reminder">Please enter a name</p>
                             <p style="color: red; display: none" id="email_reminder">Please enter a valid email</p>
@@ -129,4 +136,4 @@
 
     </div>
 
-</div>
+</div>--}}

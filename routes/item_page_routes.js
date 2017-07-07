@@ -10,7 +10,14 @@ var firebase = require("firebase");
 
 var urlSlug = require('url-slug');
 
+var nodemailer = require('nodemailer');
+
+const EMAIL = process.env.EMAIL;
+
+const EMAIL_PWD = process.env.EMAIL_PWD;
+
 module.exports = function(app) {
+
 
     app.get("/item_page/:user_id/:item", function(req, res) {
 
@@ -44,7 +51,51 @@ module.exports = function(app) {
 
     });
 
+    app.post("/message_sent",function(req,res){
 
+        db.User.findOne({
+            where: {
+                id: req.body.seller
+
+            }
+        }).then(function(results) {
+
+            var title = 'Interest in your item: ' + req.body.item;
+
+            var description = req.body.message;
+
+            let transporter = nodemailer.createTransport({
+                host: 'smtp.gmail.com',
+                port: 465,
+                secure: true, // secure:true for port 465, secure:false for port 587
+                auth: {
+                    user: EMAIL,
+                    pass: EMAIL_PWD
+                }
+            });
+
+            //setup email data with unicode symbols
+
+            let mailOptions = {
+                from: EMAIL, // sender address
+                to: results.dataValues.email, // list of receivers
+                subject: title, // Subject line
+                text: req.body.message, // plain text body
+                html: "<p>" + description + "</p>" // html body
+            };
+
+            transporter.sendMail(mailOptions, function(error, info) {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log('Message %s sent: %s', info.messageId, info.response);
+                res.end();
+            });
+
+
+        });
+
+    })
 
 
 };

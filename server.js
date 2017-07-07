@@ -6,11 +6,24 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var moment = require('moment');
+const aws = require('aws-sdk');
+var session = require("express-session");
 
 // Sets up the Express App
 // =============================================================
 var app = express();
+
+// Enable cookies
+app.use(session(
+	{
+		secret: "cookie cat",
+		resave: false,
+		saveUninitialized: false,
+		cookie: {}
+	}));
+
 var PORT = process.env.PORT || 3000;
+const S3_BUCKET = process.env.S3_BUCKET;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -45,6 +58,9 @@ require("./routes/firebase_routes")(app);
 require("./routes/make_a_post_routes")(app);
 require("./routes/item_page_routes")(app);
 require("./routes/about_page_routes")(app);
+require("./routes/profile_routes")(app);
+require("./routes/contact_page_routes")(app);
+require("./routes/image_upload_routes")(app);
 
 // Syncing our sequelize models and then starting our express app
 
