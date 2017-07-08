@@ -1,32 +1,40 @@
 <body id="background-home">
 
-{{!--<div class="dropdown center_align" id="homepage_dropdown">
-    <select id="bases_homepage">
-        <option value="all-bases">-- Choose a base (default all bases) --</option>
-        {{#each bases }}
-            <option value="{{this.url_slug}}">{{this.base}}</option>
-        {{/each}}
-    </select>
-</div>--}}
 
-
-
-<div class="row row1">
-
-</div>
-
-<div class="row row2">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                {{#each categories }}
-                <div class="col-xs-4 homepage_category"><a href="#" class="homepage_category_link" value={{this.url_slug}}>{{category}}</a></div>
-                {{/each}}
+    <div class="search-block">
+        <div class="row row1">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="bases_homepage"><span class="glyphicon glyphicon-search"></span>Select a base</label>
+                        <select class="form-control" id="bases_homepage">
+                        <option value="all-bases" >All</option>
+                        {{#each bases }}
+                            <option value="{{this.url_slug}}">{{this.base}}</option>
+                        {{/each}}
+                    </select>
+                    </div>
+                </form>
             </div>
+            <div class="col-md-5"></div>
         </div>
+
+
+        <div class="row row2">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="panel panel-default cathegories-panel">
+                    <div class="panel-body">
+                        {{#each categories }}
+                        <div class="col-xs-4 homepage_category"><a href="#" class="homepage_category_link" value={{this.url_slug}}>{{category}}</a></div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
     </div>
-    <div class="col-md-2"></div>
-</div>
 
 </body>
