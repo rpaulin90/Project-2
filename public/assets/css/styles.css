@@ -1,5 +1,43 @@
+/*Gets rid off rounded corners*/
+code,
+kbd,
+pre,
+.img-rounded,
+.img-thumbnail,
+.img-circle,
+.form-control,
+.btn,
+.btn-link,
+.dropdown-menu,
+.list-group-item,
+.input-group-addon,
+.input-group-btn,
+.nav-tabs a,
+.nav-pills a,
+.navbar,
+.navbar-toggle,
+.icon-bar,
+.breadcrumb,
+.pagination,
+.pager *,
+.label,
+.badge,
+.jumbotron,
+.thumbnail,
+.alert,
+.progress,
+.panel,
+.well,
+.modal-content,
+.tooltip-inner,
+.popover,
+.popover-title,
+.carousel-indicators li {
+    border-radius:0 ;
+}
+/*!important*/
 
- /*MODAL 
+/* MODAL */
 
 .modal_footer {
 
@@ -23,12 +61,12 @@
 
     margin-top: 10px;
 
-}*/
+}
 
 /* END MODAL */
 
 /* About Page */
-/*#background-about{
+#background-about{
     background-image: url("/images/concrete_seamless.png");
     background-repeat: no-repeat;
     background-position: center center fixed;
@@ -58,13 +96,13 @@
 #about-text {
     font-family: 'Bitter', serif;
     font-size: 16px;
-}*/
+}
 
 /* End About Page */
 
 /* Contact Page */
 
-/*#background-contact{
+#background-contact{
     background-image: url("/images/american-flag.jpg");
     background-repeat: no-repeat;
     background-position: center center fixed;
@@ -111,102 +149,79 @@ tr:hover{
 th {
     background-color: #000099;
     color: white;
-}*/
+}
 
 /* End Contact Page */
 
-/* -----------------------  HOMEPAGE -----------------------------------------*/
+/*----------------------------------------       HOMEPAGE       -------------------------------------------*/
 
-html , body {
-    height: 100%;
-    width: 100%;
-}
+#background-home{
+    background-image: url("/images/blue_flag.png");
+    /*/*background-repeat: no-repeat;*/
+    max-width: 98%;
+    max-height: 100%;
+}   
 
-body {
-    background-image: url("/images/sunset-flag-america-fields2.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-color: #cccccc;
-}
-
-nav {
+.navbar {
     background-color: rgba(0,0,0,0);
     box-shadow: none;
     padding-top:20px;
+    border-bottom: none;
+    
 }
 
-.logo {
+.navbar-brand {
     margin-left:120px;
     font-size: 50px;
     font-family: 'Pacifico', cursive;
 }
 
-main {
-    margin-top: 70px;
-}
-
-.select_base_label {
-    color:#ffffff;
-    font-family: 'Yrsa', serif;
-    font-size: 30px;
-}
-
-.valign-center {
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
-  margin-bottom:10px;
-}
-
-.material-icons.md-36 { 
-    font-size: 36px;
-    color:#ffffff;
-}
-
-.select-bases {
-    background-color: #fff;
-}
-
-.select-wrapper input.select-dropdown {
-    border-style: none;
-    margin:0;
-    padding-left:20px;
-    color: #3C4781;
-}
-
-.select-wrapper span.caret {
-    padding-right: 15px;
-    color:#3C4781;
-}
-
-ul.dropdown-content.select-dropdown li span {
-    color: #3C4781;
-}
-
-.panel {
-   margin-top:20px;   
-}
-
-.card-panel {
-    
-    margin:0;
-    height: 520px;
-    width: 1100px;
-    z-index: 2;
-}
-
-.modal-trigger {
-    border-radius: 10em;
+.navbar-right li {
+    padding: 15px;
     font-size: 15px;
 }
 
-.page-footer {
-    position:absolute;
-    width:100%;
-    height:30%;
-    background:#3C4781;
-    opacity: 0.90;
-    bottom:0;
-    z-index: -1;
-    border:0;
+#logout_btn {
+    border-radius: 24px;
 }
+
+a {
+    color:black;
+}
+
+a:hover {
+    color:black;
+    text-decoration: none;
+}
+
+.row1 {
+    margin: 150px;
+}
+
+.homepage_category {
+    padding: 10px;
+    margin: 0;
+}
+
+.homepage_category:hover {
+    background-color: #000099;
+}
+
+a.homepage_category_link {
+    margin-left: 135px;
+    font-size: 15px;
+}
+
+.sign_buttons {
+    border-radius: 24px;
+    margin-right: 30px;
+    font-size: 15px;
+}
+
+
+
+/*.select_base_label {
+    color:#ffffff;
+    font-family: 'Yrsa', serif;
+    font-size: 30px;
+}*/

@@ -18,10 +18,11 @@
 						<p>Posted by: {{this.UserName}} ({{this.UserRank}})</p>
 						<strong class="h4">Description and additional comments</strong>
 						<p>{{this.description}}</p>
+						<p><button type="submit" class="btn btn-danger text-center delete-post-btn" data-id="{{this.id}}">Delete Post</button></p>
 					</div>
 				
 					<div class="col-md-6">
-						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png" alt="{{this.image_link}}" style="width: 30%; height: 30%">
+						<img src="{{this.image_link}}" alt="{{this.name}}" style="width: 100%">
 					</div>
 				</div>
 				{{else}}

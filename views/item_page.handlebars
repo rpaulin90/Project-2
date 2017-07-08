@@ -6,6 +6,7 @@
             <p>Base: {{base}}</p>
             <p>Price: $ {{item_info.price}}</p>
             <p>Posted by: {{seller_info.name}} ({{seller_info.rank}})</p>
+            <img src="{{seller_info.image_link}}" alt="" style="width: 30%">
             <h4>Description and additional comments</h4>
             <p>{{item_info.description}}</p>
         </div>
@@ -23,7 +24,7 @@
                 <h4>Send an email to the seller:</h4>
                 <textarea class="form-control" rows="5" id="comment" style="overflow-y: auto"></textarea>
             </div>
-            <button value="{{seller_info.id}}" type="submit" class="btn btn-default" id="send_email">Send</button>
+            <button value="{{seller_info.id}}" type="submit" class="btn btn-default primary" id="send_email" style="margin-bottom: 10px; color: #9d9d9d; background-color: #222">Send</button>
         </div>
     </div>
 </div>

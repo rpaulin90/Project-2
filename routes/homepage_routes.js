@@ -189,11 +189,21 @@ module.exports = function(app) {
 
                     if(y.toString().includes("0")){
                         n++;
-                        pages.push({
-                            page: n,
-                            category_slug: req.params.category,
-                            base_slug: req.params.base
-                        })
+                        if(n == req.params.page){
+                            pages.push({
+                                page: n,
+                                category_slug: req.params.category,
+                                base_slug: req.params.base,
+                                active: "active"
+                            })
+                        }else {
+                            pages.push({
+                                page: n,
+                                category_slug: req.params.category,
+                                base_slug: req.params.base,
+                                active: "not_active"
+                            })
+                        }
                     }
                 }
                 console.log(pages);

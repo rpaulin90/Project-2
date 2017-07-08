@@ -1,56 +1,32 @@
+<body id="background-home">
 
-   <main>
+{{!--<div class="dropdown center_align" id="homepage_dropdown">
+    <select id="bases_homepage">
+        <option value="all-bases">-- Choose a base (default all bases) --</option>
+        {{#each bases }}
+            <option value="{{this.url_slug}}">{{this.base}}</option>
+        {{/each}}
+    </select>
+</div>--}}
 
-        <!--  Choose the base area  -->
-        <div class="row">
-            <div class="col m1"></div>
-            <div class="input-field col s12 m3 options_col">
 
-                <!-- This div was made to align icon and a text -->
-                <div class="valign-center">
-                    <i class="material-icons md-36">location_on</i>
-                    <span class="select_base_label">Select a base</span>
-                </div>
 
-                <select class="select-bases z-depth-5">
-                        <option value="0" selected>All</option>
-                        {{#each bases }}
-                            <option value="{{this.url_slug}}">{{this.base}}</option>
-                        {{/each}}
-                </select>
+<div class="row row1">
+
+</div>
+
+<div class="row row2">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{#each categories }}
+                <div class="col-xs-4 homepage_category"><a href="#" class="homepage_category_link" value={{this.url_slug}}>{{category}}</a></div>
+                {{/each}}
             </div>
         </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 
-        <!--  Panel  -->
-        <div class="row panel">
-            <div class="col m1"></div>
-            <div class="col s12 m7">
-                <div class="card-panel white z-depth-5">
-                    <div class="row">
-
-                        {{!--<div class="col s4">
-                             Promo Content 1 goes here 
-                        </div>
-                        <div class="col s4">
-                             Promo Content 2 goes here 
-                        </div>
-                        <div class="col s4">
-                             Promo Content 3 goes here 
-                        </div>--}}
-
-                        {{#each categories }}
-                            <div class="col s4 homepage_category"><a href="#" class="homepage_category_link" value={{this.url_slug}}>{{category}}</a></div>
-                        {{/each}}
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-        <!--  Footer  -->
-    <footer class="page-footer">
-    </footer>
+</body>
